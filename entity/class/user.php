@@ -26,7 +26,6 @@ class User extends DB
         if($id !== false){
             $this->id = $id;
             $this->load();
-            $this->sujet = new Sujet($this->id_sujet);
         }
     }
 
@@ -95,15 +94,6 @@ class User extends DB
     public function getPassword()
     {
         return $this->password;
-    }
-
-    //Singleton
-    public function getSujet()
-    {
-        if($this->sujet != null){
-            $this->sujet = new Sujet($this->id_sujet);
-        }
-        return $this->sujet;
     }
     /**
      * @param mixed $password
